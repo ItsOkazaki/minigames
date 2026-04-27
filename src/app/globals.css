@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&family=Cairo:wght@400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  --font-tech: "Orbitron", "Cairo", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-neon-cyan: #00fff2;
+  --color-neon-pink: #ff00de;
+  --color-neon-yellow: #ffff00;
+  --color-neon-red: #ff0033;
+  --color-neon-green: #00ff33;
+}
+
+@layer base {
+  body {
+    @apply bg-[#050505] text-white overflow-x-hidden;
+  }
+  
+  /* Force Cairo for Arabic/Darija ranges if needed */
+  :lang(ar), :lang(dz) {
+    font-family: "Cairo", sans-serif;
+  }
+}
+
+.font-arabic {
+  font-family: "Cairo", sans-serif !important;
+}
+
+.text-gradient-cyan {
+  @apply bg-gradient-to-r from-neon-cyan to-white bg-clip-text text-transparent;
+}
+
+.text-gradient-pink {
+  @apply bg-gradient-to-r from-neon-pink to-white bg-clip-text text-transparent;
+}
+
+.neon-border-cyan {
+  @apply border-neon-cyan shadow-[0_0_15px_rgba(0,255,242,0.4)];
+}
+
+.neon-border-pink {
+  @apply border-neon-pink shadow-[0_0_15px_rgba(255,0,222,0.4)];
+}
+
+/* Custom cursor hide for the whole body when interactive */
+.cursor-none {
+  cursor: none !important;
+}
